@@ -14,7 +14,7 @@ import AdmissionPage from "./components/Admin/AdmissionForm";
 import Department from "./components/department/Department";
 import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
-import NIRF from "./components/nirf/NIRF";
+import Nirf from "./components/nirf/Nirf";
 import Footer from "./components/footer/Footer";
 import AdminApplications from "./components/Admin/AdminApplications";
 import StudentApplicationStatus from "./components/student/StudentApplicationStatus";
@@ -225,7 +225,7 @@ function App() {
         <Route path="/department" element={<Department />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/nirf" element={<NIRF />} />
+        <Route path="/nirf" element={<Nirf />} />
         <Route path="/footer" element={<Footer />} />
       </Routes>
     </Router>

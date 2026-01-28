@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './NIRF.css';
+import './Nirf.css';
 import Footer from "../footer/footer";
 
-const NIRF = () => {
+const Nirf = () => {
   const [selectedYear, setSelectedYear] = useState('2024');
 
   const achievements = [
@@ -266,4 +266,4 @@ const NIRF = () => {
   );
 };
 
-export default NIRF;
+export default Nirf;

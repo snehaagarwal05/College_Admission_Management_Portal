@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import API_BASE_URL from '../../config';
+import API_BASE_URL from './config';  
 export default function PaymentPage() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();

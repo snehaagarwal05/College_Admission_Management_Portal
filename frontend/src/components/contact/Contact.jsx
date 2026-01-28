@@ -1,7 +1,7 @@
 import React from "react";
 import "./Contact.css";
 import { motion } from "framer-motion";
-import Footer from "../footer/footer";
+import Footer from "../footer/Footer";
 
 const Contact = () => {
   return (

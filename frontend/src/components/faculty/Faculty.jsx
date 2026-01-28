@@ -1,6 +1,6 @@
 import React from "react";
 import "./Faculty.css";
-import Footer from "../footer/footer";
+import Footer from "../footer/Footer";
 
 const facultyData = [
   {

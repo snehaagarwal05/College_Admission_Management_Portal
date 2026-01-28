@@ -1,7 +1,7 @@
 import React from "react";
 import "./About.css";
 import { motion } from "framer-motion";
-import Footer from "../footer/footer";
+import Footer from "../footer/Footer";
 
 const About = () => {
   return (

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./CampusLife.css"; // make sure this file exists and is imported
-
+import Footer from "../footer/Footer";
 const slides = {
   playground: [
     "https://images.unsplash.com/photo-1505678261036-a3fcc5e884ee?auto=format&fit=crop&w=1200&q=80",
@@ -87,6 +87,7 @@ export default function CampusLife() {
           <CardSlider images={slides.hostel} />
         </section>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
-import Footer from "../footer/footer";
+import Footer from "../footer/Footer";
 import NewsEvents from "./NewsEvents";
 import CampusInfoSection from "./CampusInfoSection";
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Department.css";
 import { motion, AnimatePresence } from "framer-motion";
-import Footer from "../footer/footer";
+import Footer from "../footer/Footer";
 
 const allDepartments = [
   {

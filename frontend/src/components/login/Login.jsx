@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { users } from "../data";
 import "./Login.css";
-
+import API_BASE_URL from '../../config';
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -49,7 +49,7 @@ export default function Login() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/student/login", {
+      const res = await fetch("${API_BASE_URL}/api/student/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ applicationId, email })

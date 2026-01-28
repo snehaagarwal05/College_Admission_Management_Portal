@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./StudentDashboard.css";
-
+import API_BASE_URL from '../../config';
 export default function StudentDashboard() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
@@ -41,7 +41,7 @@ export default function StudentDashboard() {
     try {
       setLoading(true);
       
-      const res = await fetch(`http://localhost:5000/api/student/dashboard/${email}`);
+      const res = await fetch(`${API_BASE_URL}/api/student/dashboard/${email}`);
       
       if (!res.ok) {
         throw new Error("Failed to fetch dashboard");
@@ -81,7 +81,7 @@ export default function StudentDashboard() {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/api/additional-documents/${docId}/upload`,
+        `${API_BASE_URL}/api/additional-documents/${docId}/upload`,
         {
           method: "POST",
           body: formData,
@@ -196,7 +196,7 @@ export default function StudentDashboard() {
             <h3>🎉 Admission Letter Available!</h3>
             <p>Congratulations! Your admission letter is ready for download.</p>
             <a
-              href={`http://localhost:5000${primaryApp.admission_letter_path}`}
+              href={`${API_BASE_URL}${primaryApp.admission_letter_path}`}
               target="_blank"
               rel="noopener noreferrer"
               className="pay-btn-small"
@@ -423,7 +423,7 @@ export default function StudentDashboard() {
               <p className="doc-label">{doc.label}</p>
               {doc.path ? (
                 <a 
-                  href={`http://localhost:5000${doc.path}`} 
+                  href={`${API_BASE_URL}${doc.path}`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="doc-link"

@@ -32,22 +32,22 @@ const ReportsPage = () => {
   const fetchAllReports = async () => {
     try {
       // Fetch admission report
-      const admissionRes = await fetch("http://localhost:5000/api/reports/admission");
+      const admissionRes = await fetch("${API_BASE_URL}/api/reports/admission");
       const admissionData = await admissionRes.json();
       setAdmissionStats(admissionData);
 
       // Fetch course-wise report
-      const courseRes = await fetch("http://localhost:5000/api/reports/course-wise");
+      const courseRes = await fetch("${API_BASE_URL}/api/reports/course-wise");
       const courseData = await courseRes.json();
       setCourseWiseData(courseData);
 
       // Fetch payment report
-      const paymentRes = await fetch("http://localhost:5000/api/reports/payment");
+      const paymentRes = await fetch("${API_BASE_URL}/api/reports/payment");
       const paymentDataResult = await paymentRes.json();
       setPaymentData(paymentDataResult);
 
       // Fetch detailed payment information (students with payment status)
-      const paymentDetailsRes = await fetch("http://localhost:5000/api/reports/payment-details");
+      const paymentDetailsRes = await fetch("${API_BASE_URL}/api/reports/payment-details");
       const paymentDetailsData = await paymentDetailsRes.json();
       setPaymentDetails(paymentDetailsData);
     } catch (err) {

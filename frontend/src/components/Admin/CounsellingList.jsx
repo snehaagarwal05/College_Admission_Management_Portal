@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CounsellingList.css";
-
+import API_BASE_URL from '../../config';
 const CounsellingList = () => {
   const navigate = useNavigate();
   const [allApplications, setAllApplications] = useState([]);
@@ -23,7 +23,7 @@ const CounsellingList = () => {
   const fetchApplications = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/api/applications");
+      const res = await fetch("${API_BASE_URL}/api/applications");
       
       if (!res.ok) {
         throw new Error('Failed to fetch applications');
@@ -45,7 +45,7 @@ const CounsellingList = () => {
 
   const fetchCourses = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/courses");
+      const res = await fetch("${API_BASE_URL}/api/courses");
       const data = await res.json();
       setCourses(data);
     } catch (err) {
@@ -114,7 +114,7 @@ const CounsellingList = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/api/admin/bulk-approve', {
+      const res = await fetch('${API_BASE_URL}/api/admin/bulk-approve', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

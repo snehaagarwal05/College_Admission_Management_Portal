@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-
+import API_BASE_URL from '../../config';
 export default function PaymentPage() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
@@ -58,7 +58,7 @@ export default function PaymentPage() {
   const fetchApplicationData = async (appId) => {
     try {
       addDebug("Fetching application data from backend...");
-      const response = await fetch(`http://localhost:5000/api/applications/${appId}`);
+      const response = await fetch(`${API_BASE_URL}/api/applications/${appId}`);
       
       if (!response.ok) {
         throw new Error("Failed to fetch application data");
@@ -70,7 +70,7 @@ export default function PaymentPage() {
       // Get course details to fetch fees
       if (data.course_preference_1) {
         addDebug(`Fetching course fees for course ID: ${data.course_preference_1}`);
-        const courseResponse = await fetch(`http://localhost:5000/api/courses`);
+        const courseResponse = await fetch(`${API_BASE_URL}/api/courses`);
         const courses = await courseResponse.json();
         
         const selectedCourse = courses.find(c => c.id === data.course_preference_1);
@@ -105,7 +105,7 @@ export default function PaymentPage() {
   const fetchRazorpayKey = async () => {
     try {
       addDebug("Fetching Razorpay key from backend...");
-      const response = await fetch("http://localhost:5000/api/payment/razorpay-key");
+      const response = await fetch("${API_BASE_URL}/api/payment/razorpay-key");
       const data = await response.json();
       
       if (data.key) {
@@ -182,7 +182,7 @@ export default function PaymentPage() {
 
       // Step 2: Create order
       addDebug("Step 2: Creating payment order...");
-      addDebug(`POST to: http://localhost:5000/api/payment/create-order`);
+      addDebug(`POST to: ${API_BASE_URL}/api/payment/create-order`);
       
       const orderPayload = {
         applicationId: parseInt(applicationId),
@@ -190,7 +190,7 @@ export default function PaymentPage() {
       };
       addDebug(`Payload: ${JSON.stringify(orderPayload)}`);
 
-      const orderResponse = await fetch("http://localhost:5000/api/payment/create-order", {
+      const orderResponse = await fetch("${API_BASE_URL}/api/payment/create-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -241,7 +241,7 @@ export default function PaymentPage() {
             
             addDebug(`Verify payload: ${JSON.stringify(verifyPayload)}`);
 
-            const verifyResponse = await fetch("http://localhost:5000/api/payment/verify", {
+            const verifyResponse = await fetch("${API_BASE_URL}/api/payment/verify", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

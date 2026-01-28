@@ -1,11 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-
+import API_BASE_URL from '../../config';
 const ApplicationFee = () => {
   const { id } = useParams(); // application id from URL
 
   const payNow = async () => {
-    const res = await fetch("http://localhost:5000/api/payment/create-order", {
+    const res = await fetch("${API_BASE_URL}/api/payment/create-order", {
       method: "POST",
     });
 
@@ -20,7 +20,7 @@ const ApplicationFee = () => {
       order_id: order.id,
       handler: async function (response) {
         const verify = await fetch(
-          "http://localhost:5000/api/payment/verify",
+          "${API_BASE_URL}/api/payment/verify",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -35,7 +35,7 @@ const ApplicationFee = () => {
 
             // 🔹 NEW: Generate receipt
             const receiptRes = await fetch(
-              "http://localhost:5000/api/payment/pay",
+              "${API_BASE_URL}/api/payment/pay",
               {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -50,7 +50,7 @@ const ApplicationFee = () => {
 
             if (receiptData.success) {
               window.open(
-                `http://localhost:5000/receipts/${receiptData.receiptFile}`,
+                `${API_BASE_URL}/receipts/${receiptData.receiptFile}`,
                 "_blank"
               );
             }

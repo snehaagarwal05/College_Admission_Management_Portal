@@ -1,14 +1,14 @@
 
 import React, { useEffect, useState } from "react";
 import "./IssueAdmissionLetter.css";
-
+import API_BASE_URL from '../../config';
 const IssueAdmissionLetter = () => {
   const [students, setStudents] = useState([]);
   const [selected, setSelected] = useState(null);
 
   // Load APPROVED students
   useEffect(() => {
-    fetch("http://localhost:5000/api/applications")
+    fetch("${API_BASE_URL}/api/applications")
       .then((res) => res.json())
       .then((data) => setStudents(data.filter((s) => s.selection_status === "selected")));
   }, []);
@@ -49,7 +49,7 @@ TIE College
   const downloadOfficialPDF = () => {
     if (!selected) return alert("Select a student first!");
 
-    const pdfUrl = `http://localhost:5000/api/officer/admission-letter/${selected.id}`;
+    const pdfUrl = `${API_BASE_URL}/api/officer/admission-letter/${selected.id}`;
 
     window.open(pdfUrl, "_blank"); // open in new tab
   };

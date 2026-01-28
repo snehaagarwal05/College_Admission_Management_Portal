@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import API_BASE_URL from '../../config';
 const OfficerDashboard = () => {
   const navigate = useNavigate();
   const [stats, setStats] = useState({
@@ -29,7 +29,7 @@ const [courses, setCourses] = useState([]); // Changed from departments
 
   const fetchStats = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/officer/stats");
+      const res = await fetch("${API_BASE_URL}/api/officer/stats");
       
       if (!res.ok) {
         const errorData = await res.json().catch(() => ({}));
@@ -48,7 +48,7 @@ const [courses, setCourses] = useState([]); // Changed from departments
 
   const fetchApplications = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/officer/applications");
+      const res = await fetch("${API_BASE_URL}/api/officer/applications");
       
       if (!res.ok) {
         const errorData = await res.json().catch(() => ({}));
@@ -76,7 +76,7 @@ const [courses, setCourses] = useState([]); // Changed from departments
   };
   const fetchCourses = async () => {
   try {
-    const res = await fetch("http://localhost:5000/api/courses");
+    const res = await fetch("${API_BASE_URL}/api/courses");
     const coursesData = await res.json();
     
     console.log("Courses fetched:", coursesData);
@@ -96,7 +96,7 @@ const [courses, setCourses] = useState([]); // Changed from departments
 
       // Use a combined endpoint that handles both verification and selection rejection
       try {
-        const res = await fetch(`http://localhost:5000/api/applications/${appId}/reject-documents`, {
+        const res = await fetch(`${API_BASE_URL}/api/applications/${appId}/reject-documents`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ 
@@ -121,7 +121,7 @@ const [courses, setCourses] = useState([]); // Changed from departments
     } else {
       // Verify documents normally
       try {
-        const res = await fetch(`http://localhost:5000/api/applications/${appId}/officer-verification`, {
+        const res = await fetch(`${API_BASE_URL}/api/applications/${appId}/officer-verification`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ officer_verified: 1 }),
@@ -148,7 +148,7 @@ const [courses, setCourses] = useState([]); // Changed from departments
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/api/applications/${appId}/request-document`, {
+      const res = await fetch(`${API_BASE_URL}/api/applications/${appId}/request-document`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ reason: documentRequest }),
@@ -180,7 +180,7 @@ const [courses, setCourses] = useState([]); // Changed from departments
   }
 
   try {
-    const res = await fetch("http://localhost:5000/api/officer/bulk-schedule-interview", {
+    const res = await fetch("${API_BASE_URL}/api/officer/bulk-schedule-interview", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -229,7 +229,7 @@ const [courses, setCourses] = useState([]); // Changed from departments
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/api/officer/selection/${appId}`, {
+      const res = await fetch(`${API_BASE_URL}/api/officer/selection/${appId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: selectionStatus }),
@@ -286,7 +286,7 @@ const [courses, setCourses] = useState([]); // Changed from departments
 
   try {
     const res = await fetch(
-      "http://localhost:5000/api/officer/send-admission-letters",
+      "${API_BASE_URL}/api/officer/send-admission-letters",
       { 
         method: "POST",
         headers: { "Content-Type": "application/json" }
@@ -617,7 +617,7 @@ const [courses, setCourses] = useState([]); // Changed from departments
                   <div key={idx} style={{ padding: "10px", background: "white", borderRadius: "6px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                     <span style={{ fontSize: "14px", color: "#374151" }}>{doc.label}</span>
                     {doc.path ? (
-                      <a href={`http://localhost:5000${doc.path}`} target="_blank" rel="noopener noreferrer" style={{ color: "#3b82f6", textDecoration: "none", fontSize: "14px" }}>View</a>
+                      <a href={`${API_BASE_URL}${doc.path}`} target="_blank" rel="noopener noreferrer" style={{ color: "#3b82f6", textDecoration: "none", fontSize: "14px" }}>View</a>
                     ) : (
                       <span style={{ color: "#6b7280", fontSize: "12px" }}>Missing</span>
                     )}

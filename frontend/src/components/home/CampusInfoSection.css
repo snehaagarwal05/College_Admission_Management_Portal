@@ -1,0 +1,76 @@
+.campus-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 50px 80px;
+}
+
+.campus-box {
+  text-align: center;
+  border-radius: 20px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.campus-box:hover {
+  transform: translateY(-5px);
+}
+
+.campus-img {
+  width: 75%;
+  margin: 20px auto;
+  display: block;
+}
+
+.campus-link {
+  text-decoration: none;
+  color: #0066ff;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.campus-link:hover {
+  color: #003399;
+}
+
+/* QUICKLINKS */
+.quicklinks-box {
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+}
+
+.quicklink-item {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  font-size: 1.1rem;
+}
+
+.quick-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 15px;
+  color: #0073ff;
+}
+
+.quicklink-item a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.quicklink-item a:hover {
+  color: #0066ff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .campus-section {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+}

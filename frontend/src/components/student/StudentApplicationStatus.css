@@ -1,0 +1,308 @@
+
+.status-page {
+  background: #f4f6fb;
+  min-height: calc(100vh - 70px); /* leave space for navbar */
+  padding: 2.5rem 1rem 3rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* Centered container */
+.status-container {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+/* Cards */
+.status-card,
+.status-result-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.8rem 2rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  margin-bottom: 1.8rem;
+}
+
+/* Headings */
+.status-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: #111827;
+}
+
+.status-subtitle {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+/* Form */
+.status-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  gap: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-group input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Button */
+.primary-btn {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease,
+    background 0.2s ease;
+}
+
+.primary-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+}
+
+.primary-btn:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* Error text */
+.error-text {
+  color: #dc2626;
+  font-size: 0.9rem;
+}
+
+/* Result header */
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.result-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 0.15rem;
+}
+
+.result-app-id {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.result-status-block {
+  text-align: right;
+}
+
+/* Status pill */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.status-approved {
+  background: rgba(34, 197, 94, 0.12);
+  color: #15803d;
+}
+
+.status-rejected {
+  background: rgba(239, 68, 68, 0.12);
+  color: #b91c1c;
+}
+
+.status-pending,
+.status-unknown {
+  background: rgba(148, 163, 184, 0.15);
+  color: #4b5563;
+}
+
+/* Grid for details */
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.result-section {
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #111827;
+}
+
+.field-label {
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 1.2rem 0 1rem;
+}
+
+/* Document list */
+.doc-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+}
+
+.doc-list li {
+  margin-bottom: 0.4rem;
+}
+
+.doc-list li span {
+  font-weight: 500;
+  color: #374151;
+}
+
+.doc-list a {
+  color: #2563eb;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.doc-list a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .status-card,
+  .status-result-card {
+    padding: 1.25rem 1.2rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .result-status-block {
+    text-align: left;
+  }
+}
+
+.alert-box {
+  background: #fff3cd;
+  border: 1px solid #ffeeba;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.extra-doc-card {
+  background: #ffffff;
+  padding: 10px;
+  border-left: 4px solid #ff9800;
+  margin-top: 10px;
+}
+
+.unread {
+  background: #fff4d6;
+  border-left: 4px solid #ff9f00;
+}
+
+.read {
+  background: #f2f2f2;
+  border-left: 4px solid #777;
+}
+
+.notify-btn {
+  background: #007bff;
+  color: white;
+  padding: 5px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* Base pill */
+.status-pill {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+/* Approved */
+.status-approved {
+  background: #d4f8d4;
+  color: #1c7c1c;
+}
+
+/* Pending */
+.status-pending {
+  background: #fff3cd;
+  color: #8a6d3b;
+}
+
+/* Rejected */
+.status-rejected {
+  background: #f8d7da;
+  color: #842029;
+}

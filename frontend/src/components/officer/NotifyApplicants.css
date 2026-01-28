@@ -1,0 +1,101 @@
+.notify-container {
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.notify-title {
+  font-size: 32px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.notify-subtitle {
+  text-align: center;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+/* Filters */
+.notify-filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.notify-filters input,
+.notify-filters select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 48%;
+}
+
+/* Student Cards */
+.student-list {
+  margin: 20px 0;
+}
+
+.student-card {
+  padding: 18px;
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.student-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 16px rgba(0,0,0,0.15);
+}
+
+.empty {
+  text-align: center;
+  color: gray;
+  margin-top: 20px;
+}
+
+/* Message Box */
+.notify-message-box textarea {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: 1px solid #bbb;
+  font-size: 16px;
+}
+
+.notify-btn {
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: #1e3c72;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.notify-btn:hover {
+  background: #264c96;
+}
+
+/* Success Popup */
+.success-popup {
+  margin-top: 20px;
+  padding: 12px;
+  text-align: center;
+  background: #38ef7d;
+  color: white;
+  border-radius: 8px;
+  font-size: 18px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

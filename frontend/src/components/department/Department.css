@@ -1,0 +1,121 @@
+.dept-page {
+  width: 100%;
+  background: #f6f7fb;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Banner */
+.dept-banner {
+  background: #2360a5;
+  padding: 60px;
+  text-align: center;
+  color: white;
+}
+.dept-banner h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+.dept-banner p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* Search Box */
+.dept-search-container {
+  text-align: center;
+  margin: 25px 0;
+}
+.dept-search-container input {
+  width: 40%;
+  padding: 14px;
+  border-radius: 8px;
+  border: 2px solid #ccd4ff;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Filters */
+.dept-filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+.dept-filters button {
+  padding: 10px 18px;
+  background: white;
+  border-radius: 6px;
+  border: 2px solid #4d79ff;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.dept-filters button.active,
+.dept-filters button:hover {
+  background: #4d79ff;
+  color: white;
+}
+
+/* Category Box */
+.dept-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.dept-category {
+  background: white;
+  padding: 20px;
+  margin: 18px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Accordion Header */
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.accordion-header h2 {
+  font-size: 22px;
+  margin: 0;
+}
+
+/* Card Grid */
+.dept-card-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 22px;
+  padding-bottom: 10px;
+}
+
+/* Cards */
+.dept-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  border-left: 6px solid #4d79ff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.12);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.dept-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.dept-card .icon {
+  font-size: 24px;
+}
+
+.dept-card p {
+  font-size: 15px;
+  margin: 0;
+  font-weight: 500;
+  color: #222;
+}

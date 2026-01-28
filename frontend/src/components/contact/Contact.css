@@ -1,0 +1,130 @@
+.contact-page {
+  width: 100%;
+  background: #f6f8ff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* HEADER */
+.contact-header {
+  background: #2360a5;
+  padding: 55px;
+  text-align: center;
+  color: white;
+}
+.contact-header h1 {
+  font-size: 40px;
+  margin: 0;
+}
+.breadcrumb {
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+/* MAIN GRID */
+.contact-container {
+  display: flex;
+  gap: 30px;
+  padding: 40px 60px;
+}
+
+/* LEFT SIDE */
+.contact-left {
+  flex: 2;
+}
+
+/* CARDS */
+.contact-card,
+.map-card,
+.form-card,
+.office-hours {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.contact-card h2,
+.map-card h2,
+.form-card h2,
+.office-hours h2 {
+  margin-bottom: 12px;
+  color: #4d79ff;
+}
+
+.highlight-number {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* OFFICE HOURS */
+.office-hours ul li {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+/* MAP */
+.map-card iframe {
+  border-radius: 12px;
+}
+
+/* CONTACT FORM */
+.form-card form {
+  display: flex;
+  flex-direction: column;
+}
+.form-card input,
+.form-card textarea {
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #ccd4ff;
+  font-size: 15px;
+  outline: none;
+}
+.form-card button {
+  background: #4d79ff;
+  padding: 12px;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.form-card button:hover {
+  background: #365edb;
+}
+
+/* RIGHT SIDE (NEWS) */
+.contact-right {
+  flex: 1.5;
+}
+.news-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+.news-card {
+  background: white;
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  margin-bottom: 18px;
+}
+.news-card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  background: #e0e0e0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+}

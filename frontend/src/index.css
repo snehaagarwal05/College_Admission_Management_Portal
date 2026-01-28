@@ -1,0 +1,150 @@
+.progress-container {
+  margin-top: 30px;
+  text-align: left;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  background: #f9fafb;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.step.done {
+  background: #e0f7e9;
+}
+
+.step input {
+  margin-right: 10px;
+}
+
+.interview-date {
+  margin-left: 10px;
+  font-size: 0.9em;
+  color: #2563eb;
+}
+
+.admin-controls {
+  text-align: left;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.admin-controls label {
+  display: block;
+  margin: 12px 0;
+}
+
+.pay-btn {
+  margin-top: 20px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.logout-btn {
+  margin-top: 30px;
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 320px;
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-box label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.login-box input,
+.login-box select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background-color: #4338ca;
+}
+
+.dashboard {
+  text-align: center;
+  padding: 40px;
+}
+
+.dashboard button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #dc2626;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dashboard button:hover {
+  background-color: #b91c1c;
+}
+.admin-student-card {
+  background: #fff;
+  padding: 20px;
+  margin: 15px auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: left;
+}
+.admin-student-card h3 {
+  margin-bottom: 10px;
+}
+.admin-student-card label {
+  display: block;
+  margin: 8px 0;
+}

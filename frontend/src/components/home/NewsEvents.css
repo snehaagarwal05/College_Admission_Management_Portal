@@ -1,0 +1,100 @@
+.news-events-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px 60px;
+}
+
+/* HEADER */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-header h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.red {
+  color: #d61f1f;
+}
+
+.view-all-btn {
+  background: #d61f1f;
+  color: white;
+  padding: 6px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* CAROUSEL */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.arrow-btn {
+  font-size: 26px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #d61f1f;
+  font-weight: bold;
+  padding: 10px;
+  transition: 0.2s;
+}
+
+.arrow-btn:hover {
+  transform: scale(1.2);
+}
+
+/* CARD */
+.news-card {
+  width: 360px;
+  min-height: 330px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.news-card img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.news-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.news-card p {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* OTHER SIDE */
+.latest-news,
+.upcoming-events {
+  width: 48%;
+}
+
+.event-card {
+  padding: 20px;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.event-date {
+  font-size: 14px;
+  margin-top: 10px;
+}

@@ -1,0 +1,518 @@
+.nirf-container {
+  min-height: 100vh;
+  background: #2360a5;
+  padding-top: 80px;
+}
+
+/* Hero Section */
+.nirf-hero {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 12px 30px;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.badge-icon {
+  font-size: 1.5rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.highlight-text {
+  color: #FFD700;
+  font-size: 4rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.year-selector {
+  display: inline-flex;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+}
+
+.year-btn {
+  padding: 12px 30px;
+  border-radius: 50px;
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.year-btn.active {
+  background: white;
+  color: #667eea;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.year-btn:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Floating Rank Badges */
+.floating-ranks {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.rank-badge {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  min-width: 120px;
+}
+
+.rank-number {
+  display: block;
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rank-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+/* Sections */
+.achievements-section,
+.rankings-section,
+.parameters-section {
+  padding: 80px 20px;
+  background: white;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Achievements Grid */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.achievement-card {
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px);
+}
+
+.achievement-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.achievement-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.achievement-card p {
+  font-size: 1rem;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+/* Highlights Section */
+.highlights-section {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  padding: 60px 20px;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.highlight-card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.highlight-card:hover {
+  transform: translateY(-10px);
+}
+
+.highlight-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.highlight-number {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.highlight-label {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 600;
+}
+
+/* Rankings Table */
+.rankings-table {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ranking-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 25px 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.ranking-card:hover {
+  transform: translateX(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.ranking-card.our-college {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: 3px solid #FFD700;
+  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
+  transform: scale(1.05);
+}
+
+.ranking-card.our-college:hover {
+  transform: scale(1.08) translateX(10px);
+}
+
+.rank-position {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  min-width: 80px;
+}
+
+.rank-hash {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #999;
+}
+
+.ranking-card.our-college .rank-hash {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.rank-num {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #667eea;
+}
+
+.ranking-card.our-college .rank-num {
+  color: #FFD700;
+}
+
+.college-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.college-logo {
+  font-size: 2.5rem;
+}
+
+.college-details h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.our-badge {
+  display: inline-block;
+  background: #FFD700;
+  color: #667eea;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.college-score {
+  text-align: right;
+}
+
+.score-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.ranking-card.our-college .score-number {
+  color: #FFD700;
+}
+
+.score-label {
+  font-size: 0.85rem;
+  color: #999;
+  font-weight: 500;
+}
+
+.ranking-card.our-college .score-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Parameters Grid */
+.parameters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.parameter-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 35px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.parameter-card:hover {
+  transform: translateY(-10px);
+}
+
+.param-header {
+  margin-bottom: 25px;
+}
+
+.param-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.param-header h3 {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.param-score {
+  margin: 30px 0;
+}
+
+.score-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.score-bar {
+  width: 100%;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.score-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 10px;
+  transition: width 1s ease;
+}
+
+.score-text {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #667eea;
+}
+
+.param-description {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Info Banner */
+.info-banner {
+  background: linear-gradient(135deg, #FFE5B4 0%, #FFD700 100%);
+  padding: 60px 20px;
+}
+
+.banner-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.banner-icon {
+  font-size: 4rem;
+  flex-shrink: 0;
+}
+
+.banner-text h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.banner-text p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .highlight-text {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nirf-hero {
+    padding: 60px 20px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .highlight-text {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .achievements-grid,
+  .highlights-grid,
+  .parameters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ranking-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .rank-position {
+    justify-content: center;
+  }
+
+  .college-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .floating-ranks {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,78 @@
+.letter-container {
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.letter-title {
+  font-size: 32px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.letter-subtitle {
+  text-align: center;
+  color: gray;
+  margin-bottom: 30px;
+}
+
+.letter-grid {
+  display: flex;
+  gap: 25px;
+}
+
+.student-select {
+  width: 35%;
+  background: #f8f9ff;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.student-select ul {
+  list-style: none;
+  padding: 0;
+}
+
+.student-select li {
+  background: white;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.student-select li.active {
+  background: #1e3c72;
+  color: white;
+}
+
+.letter-preview {
+  flex: 1;
+  background: #f3f7ff;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.letter-box {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  height: 320px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+.generate-btn {
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: #1e3c72;
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.generate-btn.official {
+  background-color: #4a6cf7;
+  margin-top: 10px;
+}

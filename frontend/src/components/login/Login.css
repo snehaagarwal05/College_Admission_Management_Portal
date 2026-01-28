@@ -1,0 +1,149 @@
+/* Global reset for consistency */
+* {
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* Page background */
+.login-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Login card */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 32px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  animation: fadeInUp 0.5s ease;
+}
+
+/* Title */
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #1f2933;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* Form layout */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+/* Inputs */
+.form-group input {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #d1d5db;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+.form-group input::placeholder {
+  color: #9ca3af;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+/* Error message */
+.error-message {
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+  border: 1px solid #fecaca;
+}
+
+/* Primary button */
+.login-button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #667eea, #5a67d8);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.35);
+}
+
+.login-button:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.25);
+}
+
+/* Login type toggle enhancement */
+.login-type-toggle button {
+  font-size: 0.9rem;
+  letter-spacing: 0.2px;
+}
+
+.login-type-toggle button:hover {
+  background: rgba(102, 126, 234, 0.08);
+}
+
+/* Demo credentials box */
+.login-card > div:last-child {
+  color: #374151;
+  border: 1px dashed #e5e7eb;
+}
+
+/* Subtle animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 24px;
+  }
+
+  .login-card h2 {
+    font-size: 1.4rem;
+  }
+}
+
+
+
+
+
+

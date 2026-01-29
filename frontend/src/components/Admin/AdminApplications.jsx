@@ -19,7 +19,7 @@ const AdminApplications = () => {
     setError("");
 
     try {
-      const res = await fetch("${API_BASE_URL}/api/applications");
+      const res = await fetch('${API_BASE_URL}/api/applications');
       const data = await res.json();
 
       if (!res.ok) {

@@ -73,7 +73,7 @@ const AdmissionForm = () => {
 
   const fetchCourses = async () => {
     try {
-      const res = await fetch("${API_BASE_URL}/api/courses");
+      const res = await fetch('${API_BASE_URL}/api/courses');
       const data = await res.json();
       setCourses(data);
     } catch (err) {
@@ -258,7 +258,7 @@ const AdmissionForm = () => {
       if (formData.entranceCard) fd.append("entranceCard", formData.entranceCard);
       if (formData.idProof) fd.append("idProof", formData.idProof);
 
-      const res = await fetch("${API_BASE_URL}/api/applications/draft", {
+      const res = await fetch('${API_BASE_URL}/api/applications/draft', {
         method: "POST",
         body: fd,
       });
@@ -364,7 +364,7 @@ const AdmissionForm = () => {
       console.log("Email:", formData.email);
       console.log("Course Preference 1:", formData.coursePreference1);
 
-      const res = await fetch("${API_BASE_URL}/api/applications", {
+      const res = await fetch('${API_BASE_URL}/api/applications', {
         method: "POST",
         body: fd,
       });

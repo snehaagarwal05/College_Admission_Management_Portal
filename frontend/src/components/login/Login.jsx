@@ -49,7 +49,7 @@ export default function Login() {
     }
 
     try {
-      const res = await fetch("${API_BASE_URL}/api/student/login", {
+      const res = await fetch('${API_BASE_URL}/api/student/login', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ applicationId, email })

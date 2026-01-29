@@ -8,7 +8,7 @@ const IssueAdmissionLetter = () => {
 
   // Load APPROVED students
   useEffect(() => {
-    fetch("${API_BASE_URL}/api/applications")
+    fetch('${API_BASE_URL}/api/applications')
       .then((res) => res.json())
       .then((data) => setStudents(data.filter((s) => s.selection_status === "selected")));
   }, []);

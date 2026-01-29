@@ -29,7 +29,7 @@ const [courses, setCourses] = useState([]); // Changed from departments
 
   const fetchStats = async () => {
     try {
-      const res = await fetch("${API_BASE_URL}/api/officer/stats");
+      const res = await fetch('${API_BASE_URL}/api/officer/stats');
       
       if (!res.ok) {
         const errorData = await res.json().catch(() => ({}));
@@ -48,7 +48,7 @@ const [courses, setCourses] = useState([]); // Changed from departments
 
   const fetchApplications = async () => {
     try {
-      const res = await fetch("${API_BASE_URL}/api/officer/applications");
+      const res = await fetch('${API_BASE_URL}/api/officer/applications');
       
       if (!res.ok) {
         const errorData = await res.json().catch(() => ({}));
@@ -76,7 +76,7 @@ const [courses, setCourses] = useState([]); // Changed from departments
   };
   const fetchCourses = async () => {
   try {
-    const res = await fetch("${API_BASE_URL}/api/courses");
+    const res = await fetch('${API_BASE_URL}/api/courses');
     const coursesData = await res.json();
     
     console.log("Courses fetched:", coursesData);
@@ -180,7 +180,7 @@ const [courses, setCourses] = useState([]); // Changed from departments
   }
 
   try {
-    const res = await fetch("${API_BASE_URL}/api/officer/bulk-schedule-interview", {
+    const res = await fetch('${API_BASE_URL}/api/officer/bulk-schedule-interview', {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -286,7 +286,7 @@ const [courses, setCourses] = useState([]); // Changed from departments
 
   try {
     const res = await fetch(
-      "${API_BASE_URL}/api/officer/send-admission-letters",
+      '${API_BASE_URL}/api/officer/send-admission-letters',
       { 
         method: "POST",
         headers: { "Content-Type": "application/json" }

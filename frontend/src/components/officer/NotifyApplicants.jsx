@@ -12,7 +12,7 @@ const NotifyApplicants = () => {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const res = await fetch("${API_BASE_URL}/api/applications");
+        const res = await fetch('${API_BASE_URL}/api/applications');
         const data = await res.json();
         setStudents(data);
       } catch (err) {
@@ -41,7 +41,7 @@ const NotifyApplicants = () => {
     const selectedIds = filteredList.map((s) => s.id);
 
     try {
-      const res = await fetch("${API_BASE_URL}/api/officer/notify", {
+      const res = await fetch('${API_BASE_URL}/api/officer/notify', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -105,7 +105,7 @@ export default function PaymentPage() {
   const fetchRazorpayKey = async () => {
     try {
       addDebug("Fetching Razorpay key from backend...");
-      const response = await fetch("${API_BASE_URL}/api/payment/razorpay-key");
+      const response = await fetch('${API_BASE_URL}/api/payment/razorpay-key');
       const data = await response.json();
       
       if (data.key) {
@@ -190,7 +190,7 @@ export default function PaymentPage() {
       };
       addDebug(`Payload: ${JSON.stringify(orderPayload)}`);
 
-      const orderResponse = await fetch("${API_BASE_URL}/api/payment/create-order", {
+      const orderResponse = await fetch('${API_BASE_URL}/api/payment/create-order', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -241,7 +241,7 @@ export default function PaymentPage() {
             
             addDebug(`Verify payload: ${JSON.stringify(verifyPayload)}`);
 
-            const verifyResponse = await fetch("${API_BASE_URL}/api/payment/verify", {
+            const verifyResponse = await fetch('${API_BASE_URL}/api/payment/verify', {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

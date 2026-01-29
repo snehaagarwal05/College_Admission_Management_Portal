@@ -23,7 +23,7 @@ const AdminCourseManagement = () => {
 
   const fetchCourses = async () => {
     try {
-      const res = await fetch("${API_BASE_URL}/api/courses");
+      const res = await fetch('${API_BASE_URL}/api/courses');
       const data = await res.json();
       setCourses(data);
     } catch (err) {
@@ -84,7 +84,7 @@ const AdminCourseManagement = () => {
         }
       } else {
         // Create new course
-        const res = await fetch("${API_BASE_URL}/api/courses", {
+        const res = await fetch('${API_BASE_URL}/api/courses', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),

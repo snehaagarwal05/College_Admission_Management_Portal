@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./AdminCourseManagement.css";
-
+import API_BASE_URL from "../../config";
 const AdminCourseManagement = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -23,7 +23,7 @@ const AdminCourseManagement = () => {
 
   const fetchCourses = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/courses");
+      const res = await fetch("${API_BASE_URL}/api/courses");
       const data = await res.json();
       setCourses(data);
     } catch (err) {
@@ -73,7 +73,7 @@ const AdminCourseManagement = () => {
     try {
       if (editingCourse) {
         // Update existing course
-        const res = await fetch(`http://localhost:5000/api/courses/${editingCourse.id}`, {
+        const res = await fetch(`${API_BASE_URL}/api/courses/${editingCourse.id}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
@@ -84,7 +84,7 @@ const AdminCourseManagement = () => {
         }
       } else {
         // Create new course
-        const res = await fetch("http://localhost:5000/api/courses", {
+        const res = await fetch("${API_BASE_URL}/api/courses", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
@@ -107,7 +107,7 @@ const AdminCourseManagement = () => {
     if (!window.confirm("Are you sure you want to delete this course?")) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/courses/${id}`, {
+      const res = await fetch(`${API_BASE_URL}/api/courses/${id}`, {
         method: "DELETE",
       });
 

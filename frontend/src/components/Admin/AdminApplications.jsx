@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./AdminApplications.css";
-
+import API_BASE_URL from "../../config";
 const AdminApplications = () => {
   const [applications, setApplications] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,7 +19,7 @@ const AdminApplications = () => {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/applications");
+      const res = await fetch("${API_BASE_URL}/api/applications");
       const data = await res.json();
 
       if (!res.ok) {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ReportsPage.css";
+import API_BASE_URL from "../../config";
 import {
   BarChart,
   Bar,

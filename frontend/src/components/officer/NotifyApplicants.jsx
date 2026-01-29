@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import "./NotifyApplicants.css";
-
+import API_BASE_URL from "../../config";
 const NotifyApplicants = () => {
   const [students, setStudents] = useState([]);
   const [filter, setFilter] = useState("all");
@@ -12,7 +12,7 @@ const NotifyApplicants = () => {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/applications");
+        const res = await fetch("${API_BASE_URL}/api/applications");
         const data = await res.json();
         setStudents(data);
       } catch (err) {
@@ -41,7 +41,7 @@ const NotifyApplicants = () => {
     const selectedIds = filteredList.map((s) => s.id);
 
     try {
-      const res = await fetch("http://localhost:5000/api/officer/notify", {
+      const res = await fetch("${API_BASE_URL}/api/officer/notify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

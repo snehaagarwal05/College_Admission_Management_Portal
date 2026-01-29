@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
+import API_BASE_URL from "../../config";
 const AdmissionPayment = () => {
   const { applicationId } = useParams();
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const AdmissionPayment = () => {
 
   const fetchApplication = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/applications/${applicationId}`);
+      const res = await fetch(`http://${API_BASE_URL}:5000/api/applications/${applicationId}`);
       const data = await res.json();
       
       if (data.selection_status !== 'selected') {
@@ -33,7 +33,7 @@ const AdmissionPayment = () => {
 
   const handlePayment = async () => {
     // Create Razorpay order
-    const orderRes = await fetch("http://localhost:5000/api/payment/create-admission-order", {
+    const orderRes = await fetch("http://${API_BASE_URL}:5000/api/payment/create-admission-order", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ applicationId })
@@ -49,7 +49,7 @@ const AdmissionPayment = () => {
       description: "Admission Fee Payment",
       order_id: order.id,
       handler: async function (response) {
-        const verify = await fetch("http://localhost:5000/api/payment/verify-admission", {
+        const verify = await fetch("http://${API_BASE_URL}:5000/api/payment/verify-admission", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./StudentApplicationStatus.css";
-
+import API_BASE_URL from "../../config";
 const StudentApplicationStatus = () => {
   const [form, setForm] = useState({
     id: "",
@@ -41,7 +41,7 @@ const StudentApplicationStatus = () => {
     setLoading(true);
     try {
       // fetch application
-      const res = await fetch("http://localhost:5000/api/applications/lookup", {
+      const res = await fetch("${API_BASE_URL}/api/applications/lookup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -62,7 +62,7 @@ const StudentApplicationStatus = () => {
 
       // fetch additional docs
       const docsRes = await fetch(
-        `http://localhost:5000/api/applications/${data.id}/additional-documents`
+        `${API_BASE_URL}/api/applications/${data.id}/additional-documents`
       );
       const docsData = await docsRes.json();
 
@@ -190,7 +190,7 @@ const StudentApplicationStatus = () => {
                   <span>Photo:</span>{" "}
                   {application.photo_path ? (
                     <a
-                      href={`http://localhost:5000${application.photo_path}`}
+                      href={`${API_BASE_URL}${application.photo_path}`}
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -205,7 +205,7 @@ const StudentApplicationStatus = () => {
                   <span>Signature:</span>{" "}
                   {application.signature_path ? (
                     <a
-                      href={`http://localhost:5000${application.signature_path}`}
+                      href={`${API_BASE_URL}${application.signature_path}`}
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -220,7 +220,7 @@ const StudentApplicationStatus = () => {
                   <span>10th Marksheet:</span>{" "}
                   {application.marksheet10_path ? (
                     <a
-                      href={`http://localhost:5000${application.marksheet10_path}`}
+                      href={`http://${API_BASE_URL}:5000${application.marksheet10_path}`}
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -235,7 +235,7 @@ const StudentApplicationStatus = () => {
                   <span>12th Marksheet:</span>{" "}
                   {application.marksheet12_path ? (
                     <a
-                      href={`http://localhost:5000${application.marksheet12_path}`}
+                      href={`http://${API_BASE_URL}:5000${application.marksheet12_path}`}
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -250,7 +250,7 @@ const StudentApplicationStatus = () => {
                   <span>Entrance Scorecard:</span>{" "}
                   {application.entranceCard_path ? (
                     <a
-                      href={`http://localhost:5000${application.entranceCard_path}`}
+                      href={`http://${API_BASE_URL}:5000${application.entranceCard_path}`}
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -265,7 +265,7 @@ const StudentApplicationStatus = () => {
                   <span>ID Proof:</span>{" "}
                   {application.idProof_path ? (
                     <a
-                      href={`http://localhost:5000${application.idProof_path}`}
+                      href={`http://${API_BASE_URL}:5000${application.idProof_path}`}
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -298,7 +298,7 @@ const StudentApplicationStatus = () => {
                       formData.append("file", file);
 
                       fetch(
-                        `http://localhost:5000/api/additional-documents/${doc.id}/upload`,
+                        `http://${API_BASE_URL}:5000/api/additional-documents/${doc.id}/upload`,
                         {
                           method: "POST",
                           body: formData,

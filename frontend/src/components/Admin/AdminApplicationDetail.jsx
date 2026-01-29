@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./AdminApplications.css";
-
+import API_BASE_URL from "../../config";
 const AdminApplicationDetail = () => {
   const { id } = useParams();
   const [application, setApplication] = useState(null);
@@ -17,7 +17,7 @@ const AdminApplicationDetail = () => {
   useEffect(() => {
     const fetchDetail = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/applications/${id}`);
+        const res = await fetch(`${API_BASE_URL}/api/applications/${id}`);
         const data = await res.json();
 
         if (!res.ok) {
@@ -57,7 +57,7 @@ const AdminApplicationDetail = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/api/applications/${id}/status`,
+        `${API_BASE_URL}/api/applications/${id}/status`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
@@ -95,7 +95,7 @@ const AdminApplicationDetail = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/api/applications/${id}/verification`,
+        `${API_BASE_URL}/api/applications/${id}/verification`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
@@ -132,7 +132,7 @@ const AdminApplicationDetail = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/api/applications/${id}/interview-date`,
+        `${API_BASE_URL}/api/applications/${id}/interview-date`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
@@ -287,7 +287,7 @@ const AdminApplicationDetail = () => {
             Photo:{" "}
             {application.photo_path ? (
               <a
-                href={`http://localhost:5000${application.photo_path}`}
+                href={`${API_BASE_URL}${application.photo_path}`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -301,7 +301,7 @@ const AdminApplicationDetail = () => {
             Signature:{" "}
             {application.signature_path ? (
               <a
-                href={`http://localhost:5000${application.signature_path}`}
+                href={`${API_BASE_URL}${application.signature_path}`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -315,7 +315,7 @@ const AdminApplicationDetail = () => {
             10th Marksheet:{" "}
             {application.marksheet10_path ? (
               <a
-                href={`http://localhost:5000${application.marksheet10_path}`}
+                href={`${API_BASE_URL}${application.marksheet10_path}`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -329,7 +329,7 @@ const AdminApplicationDetail = () => {
             12th / Graduation Marksheet:{" "}
             {application.marksheet12_path ? (
               <a
-                href={`http://localhost:5000${application.marksheet12_path}`}
+                href={`${API_BASE_URL}${application.marksheet12_path}`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -343,7 +343,7 @@ const AdminApplicationDetail = () => {
             Entrance Exam Scorecard:{" "}
             {application.entranceCard_path ? (
               <a
-                href={`http://localhost:5000${application.entranceCard_path}`}
+                href={`${API_BASE_URL}${application.entranceCard_path}`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -357,7 +357,7 @@ const AdminApplicationDetail = () => {
             ID Proof:{" "}
             {application.idProof_path ? (
               <a
-                href={`http://localhost:5000${application.idProof_path}`}
+                href={`${API_BASE_URL}${application.idProof_path}`}
                 target="_blank"
                 rel="noreferrer"
               >
